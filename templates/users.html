@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Users{% endblock %}
+{% block body %}
+	<br>
+	<h2 style="margin-left: 5%;">Users</h2>
+	{% if users %}
+		{% for user in users %}
+			<div style="margin-left: 5%;">{{users.index(user) + 1}}. <a href="/{{user._id}}" class="a">{{user}}</a></div>
+		{% endfor %}
+	{% else %}
+	<center><h3 style="color: #d3d3d3; margin-top: 5%;">There are no users yet. You will be the first!</h3></center>
+	{% endif %}
+{% endblock %}
